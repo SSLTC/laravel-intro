@@ -20,4 +20,8 @@ use App\Http\Controllers\ContactController;
 //});
 
 Route::get('/', [HomeController::class, 'show'])->name('home');
+Route::get('home/{shout?}', [HomeController::class, 'shout'], ['shout']);
 Route::get('/contact', [ContactController::class, 'show'])->name('contact');
+Route::get('/sayhelloworld', function () {
+    return 'Hello World';
+});
