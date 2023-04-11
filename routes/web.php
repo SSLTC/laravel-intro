@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
@@ -25,3 +26,4 @@ Route::get('/contact', [ContactController::class, 'show'])->name('contact');
 Route::get('/sayhelloworld', function () {
     return 'Hello World';
 });
+Route::get('/articles', [ArticleController::class, 'show'])->name('articles');

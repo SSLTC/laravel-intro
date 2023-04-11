@@ -19,6 +19,6 @@ class HomeController extends BaseController
 
     public function shout(Request $request, $shout)
     {
-        return view('home', compact('shout'));
+        return view('home', ['shout' => $shout]);
     }
 }

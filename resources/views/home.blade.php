@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laravel - intro</title>
-</head>
-<body>
+<x-layout>
     <h1>Home</h1>
     <a href="{{route('home', ['shout' => 'Hello World'])}}">Say hello...</a>
     <h2>{{ request()->has('shout') ? request()->get('shout') : '' }}</h2>
     <h2>{{ request()->route('shout') }}</h2>
+    <h2>{{ $shout ?? '' }}</h2>
+    <a href="{{route('articles')}}">Articles</a>
     <a href="{{route('contact')}}">Contact</a>
-</body>
-</html>
+</x-layout>
