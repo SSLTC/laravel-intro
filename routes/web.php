@@ -27,3 +27,4 @@ Route::get('/sayhelloworld', function () {
     return 'Hello World';
 });
 Route::get('/articles', [ArticleController::class, 'show'])->name('articles');
+Route::get('/article/{id?}', [ArticleController::class, 'showArticle'], ['id'])->name('article');

@@ -13,13 +13,20 @@ class ArticleController extends Controller
         $articles = Article::all();
 
         // or if you only want one:
-        $article = Article::first(); 
-        //or
-        $article = Article::find(1);
+        $article = Article::first();
 
         // returning the article with your view
         return view('articles', [
             "articles" => $articles, 
+            "featuredArticle"=> $article
+        ]);
+    }
+
+    public function ShowArticle(Request $request, $id)
+    {
+        $article = Article::find($id);
+
+        return view('article', [
             "featuredArticle"=> $article
         ]);
     }

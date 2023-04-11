@@ -6,7 +6,7 @@
     </div>
     <ul>
         @foreach($articles as $article)
-            <li>{{$article->title}}</li>
+            <li>{{$article->title}} - <a href="{{route('article', ['id' => $article->id])}}">view</a></li>
         @endforeach
     </ul>
     <a href="{{route('contact')}}">Contact</a>
